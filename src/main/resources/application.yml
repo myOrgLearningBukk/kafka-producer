@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: producer
+  kafka :
+    producer:
+      bootstrap-servers : localhost:9092
+      key-serializer : org.apache.kafka.common.serialization.StringSerializer
+      value-serializer : org.springframework.kafka.support.serializer.JacksonJsonSerializer
+      acks : all
+      retries : 10
+      retry :
+        backoff :
+          ms : 1000 # 1s
+
